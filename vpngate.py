@@ -51,7 +51,7 @@ VPNGATE_MIRROR = os.environ.get(
     "https://raw.githubusercontent.com/fdciabdul/Vpngate-Scraper-API/main/json/data.json",
 )
 # 已部署的 Cloudflare Worker 检测接口 (GET /check?proxyip=host:port, 实测确认)
-WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://hpxvps.ccwu.cc/check?sstp=vpn:vpn@")
+WORKER_CHECK_URL = os.environ.get("CHECK_WORKER", "https://cs.hpxvps.ccwu.cc/check?sstp=vpn:vpn@")
 CONCURRENCY = max(1, int(os.environ.get("CHECK_CONCURRENCY", "10")))   # 与 Worker 网页端一致的并发模型
 CHECK_TIMEOUT = float(os.environ.get("CHECK_TIMEOUT", "90"))          # 单请求客户端超时 (秒)
 MAX_CHECK_NODES = int(os.environ.get("MAX_CHECK_NODES", "0"))         # 0=不限; 本地测试可设小值
@@ -461,7 +461,6 @@ EDGE_HOSTS = [
     for h in os.environ.get(
         "EDGE_HOSTS",
         "www.leics.police.uk:443, www.dbs.com.sg:443, www.akasantech.com:443, hsl.upstate.edu:443, www.giannidelprete.it:443, www.speedtest.net:443, chrono24.com:443, dynadot.com:443, gitlab.com:443, www.sloomb.com:443, www.shopify.com:443, images.chesscomfiles.com:443, store.ubi.com:443, 101yaoye.com:443, email.lg.com:443, 224322.xyz:443, tt.78607323.xyz:443, pt.btschool.club:443, cf.3666888.xyz:443, fn.130519.xyz:443, cf.vvhan.com:443, cloudflare-ip.mofashi.ltd:443, www.hypixel.net:443, www.vastnovel.com:443, aimagazine.com:443, www.donaldjtrump.com:443, digitalocean.com:443,"
-        "cdn.cnno.de:443,saas.sin.fan:443,cf.777791.xyz:443",
     ).split(",")
     if h.strip()
 ]
@@ -522,8 +521,8 @@ def build_hosts_text(data):
 
 
 # edgetunnel 完整订阅 (vless://) 配置
-EDT_UUID = os.environ.get("EDT_UUID", "7c1e7572-83f0-487d-8406-221713260cc0")
-EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "hpxvps.ccwu.cc")
+EDT_UUID = os.environ.get("EDT_UUID", "aacd1085-7283-48fe-b017-90f551f7dab0")
+EDT_DOMAIN = os.environ.get("EDT_DOMAIN", "blue-pine-bca4.q1659253001.workers.dev")
 EDT_FINGERPRINT = os.environ.get("EDT_FINGERPRINT", "chrome")
 SUB_URL = os.environ.get("SUB_URL", "https://jerylihub.github.io/gate/sub.txt")
 
